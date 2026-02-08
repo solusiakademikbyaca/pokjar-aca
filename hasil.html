@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Hasil Strategi Kuliah | Pokjar Aca</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="hero hero-hasil">
+  <div class="hero-content">
+    <h1>Strategi Kuliah Personal</h1>
+    <span class="badge">Target IPK 3,5</span>
+  </div>
+</header>
+
+<!-- ================= MAIN ================= -->
+<main class="hasil-container">
+
+  <!-- DATA MAHASISWA -->
+  <section class="card">
+    <h2>Data Mahasiswa</h2>
+    <div class="grid-2">
+      <div><strong>Nama</strong><br><span id="nama">-</span></div>
+      <div><strong>NIM</strong><br><span id="nim">-</span></div>
+      <div><strong>Jurusan</strong><br><span id="jurusan">-</span></div>
+    </div>
+  </section>
+
+  <!-- RINGKASAN AKADEMIK -->
+  <section class="card">
+    <h2>Ringkasan Akademik</h2>
+    <div class="grid-2">
+      <div class="stat"><span class="stat-label">IPK</span><span class="stat-value" id="ipk">-</span></div>
+      <div class="stat"><span class="stat-label">IPS</span><span class="stat-value" id="ips">-</span></div>
+      <div class="stat"><span class="stat-label">SKS Ditempuh</span><span class="stat-value" id="sks-total">-</span></div>
+      <div class="stat"><span class="stat-label">SKS Lulus</span><span class="stat-value" id="sks-lulus">-</span></div>
+    </div>
+  </section>
+
+  <!-- NILAI SEMESTER TERAKHIR -->
+  <section class="card">
+    <h2>Nilai Semester Terakhir</h2>
+    <div class="table-wrapper">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Kode MK</th>
+            <th>Nama Mata Kuliah</th>
+            <th>SKS</th>
+            <th>Nilai</th>
+          </tr>
+        </thead>
+        <tbody id="tabel-nilai">
+          <tr><td colspan="4">Memuat data...</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- WAJIB DIULANG -->
+  <section class="card">
+    <h2>Mata Kuliah Wajib Diulang</h2>
+    <div class="table-wrapper">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Kode MK</th>
+            <th>Nama Mata Kuliah</th>
+            <th>SKS</th>
+            <th>Nilai</th>
+          </tr>
+        </thead>
+        <tbody id="tabel-wajib"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- DISARANKAN -->
+  <section class="card">
+    <h2>Disarankan Mengulang Salah Satu</h2>
+    <div class="table-wrapper">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Kode MK</th>
+            <th>Nama Mata Kuliah</th>
+            <th>SKS</th>
+            <th>Nilai</th>
+          </tr>
+        </thead>
+        <tbody id="tabel-saran"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- KETERANGAN -->
+  <section class="card">
+    <h2>Keterangan</h2>
+    <ul id="keterangan"></ul>
+  </section>
+
+<!-- ================= CARD: TARGET NILAI MINIMAL ================= -->
+<section class="card">
+  <h2>Target Nilai Minimal Untuk Mencapai IPK 3,5</h2>
+
+  <p class="card-desc">
+    Target berikut merupakan <strong>nilai rata-rata minimum</strong> yang perlu
+    dijaga mahasiswa hingga akhir masa studi agar IPK kelulusan dapat mencapai
+    <strong>3,5</strong>. Perhitungan disesuaikan dengan kondisi akademik
+    mahasiswa saat ini.
+  </p>
+
+  <div class="table-wrapper">
+    <table class="table table-fixed">
+      <thead>
+        <tr>
+          <th>Komponen Akademik</th>
+          <th>Target Minimal</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- FIX -->
+        <tr>
+          <td>Target IPK Kelulusan</td>
+          <td><strong>3,5</strong></td>
+        </tr>
+        <tr>
+          <td>Target TUTON Rata-rata</td>
+          <td><strong>80</strong></td>
+        </tr>
+
+        <!-- DINAMIS -->
+        <tr>
+          <td>Target IPS Rata-rata Sisa Studi</td>
+          <td><strong id="target-ips">-</strong></td>
+        </tr>
+        <tr>
+          <td>Target UAS Rata-rata</td>
+          <td><strong id="target-uas">-</strong></td>
+        </tr>
+        <tr>
+          <td>Nilai Huruf Minimal</td>
+          <td><span class="badge-nilai" id="target-huruf">-</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="card-note">
+    Perhitungan menggunakan bobot penilaian Universitas Terbuka
+    (<strong>TUTON 30%</strong> dan <strong>UAS 70%</strong>).
+    Nilai dibulatkan <strong>ke atas</strong> untuk menjaga keamanan pencapaian IPK.
+    Simulasi ini bersifat pendampingan akademik dan bukan keputusan resmi UT.
+  </p>
+</section>
+<!-- ================= CARD: STRATEGI BELAJAR ================= -->
+<section class="card">
+  <div class="strategi-grid">
+
+    <!-- KIRI -->
+    <div class="strategi-box dark">
+    <div class="strategi-icon">
+  <img src="assets/icons/tuton.png" alt="TUTON">
+</div>
+      <h3>Mencapai Nilai<br>TUTON Min. 80</h3>
+
+      <h4>Forum Diskusi</h4>
+      <ul>
+        <li>Menjawab diskusi tepat waktu</li>
+        <li>Menggunakan format jawaban yang tepat</li>
+        <li>Menggunakan sumber yang relevan</li>
+        <li>Revisi jawaban jika nilai kurang baik</li>
+        <li>Aktif membalas mahasiswa lain</li>
+      </ul>
+
+      <h4>Tugas</h4>
+      <ul>
+        <li>Menggunakan sumber yang tepat</li>
+        <li>Mengumpulkan tepat waktu</li>
+        <li>Mengikuti format yang diberikan Tutor</li>
+      </ul>
+
+      <h4>Absensi</h4>
+      <ul>
+        <li>Mengisi absensi tepat waktu</li>
+      </ul>
+    </div>
+
+    <!-- TENGAH -->
+      <div class="strategi-box blue">
+      <div class="strategi-icon">
+  <img src="assets/icons/pokjar.png" alt="Pokjar">
+</div>
+      <h3>Memanfaatkan Fasilitas<br>Kelompok Belajar</h3>
+
+      <h4>Yang didapatkan</h4>
+      <ul>
+        <li>Reminder deadline</li>
+        <li>PDF BMP (bisa dipakai di AI)</li>
+        <li>Nugas bareng offline</li>
+        <li>Belajar bareng via google meet</li>
+        <li>Bantuan administrasi berkas</li>
+        <li>Kerangka format jawaban TUTON</li>
+        <li>Rangkuman & latihan soal UAS</li>
+        <li>Strategi IPK 3,5 personal</li>
+        <li>Akses ChatGPT PRO </li>
+        <li>Akses Canva PRO</li>
+        <li>Prompt AI tugas & diskusi TUTON</li>
+        <li>Info terbaru UT 24/7</li>
+        <li>Kelas persiapan UAS MK Bahasa Inggris</li>
+      </ul>
+    </div>
+
+    <!-- KANAN -->
+      <div class="strategi-box dark">
+      <div class="strategi-icon">
+  <img src="assets/icons/uas.png" alt="UAS">
+</div>
+      <h3>Mencapai Nilai<br>UAS Memuaskan</h3>
+
+      <h4>Persiapan UAS</h4>
+      <ul>
+        <li>Latihan soal open & close book</li>
+        <li>Latihan soal tes formatif BMP</li>
+        <li>Memahami konsep & glosarium</li>
+        <li>Rangkum materi penting</li>
+      </ul>
+
+      <h4>Ujian Akhir Semester</h4>
+      <ul>
+        <li>Membawa Papan Ujian (UTM)</li>
+        <li>Membawa pena & pensil (UO & UTM)</li>
+        <li>Membawa perlengkapan sesuai ketentuan</li>
+      </ul>
+
+      <p class="tips">
+        <strong>Tips:</strong> Tembak satu opsi jawaban yang sama jika tidak bisa menjawab ujian, Misal A (semua yang tidak bisa dijawab)
+      </p>
+    </div>
+
+  </div>
+</section>
+<!-- ================= JADWAL POKJAR ================= -->
+<section class="card">
+  <div class="jadwal-wrapper">
+
+    <h2 class="jadwal-title">JADWAL POKJAR</h2>
+
+    <div class="jadwal-grid">
+
+      <div class="jadwal-item">
+        <h3>5 Februari 2026</h3>
+        <p>Pembayaran Kelompok Belajar</p>
+        <p>Akses Website Strategi Kuliah Personal</p>
+      </div>
+
+      <div class="jadwal-item">
+        <h3>8 Februari 2026</h3>
+        <p>Registrasi Mata Kuliah</p>
+        <p>Pembayaran Uang Kuliah</p>
+      </div>
+
+      <div class="jadwal-item">
+        <h3>Maret 2026</h3>
+        <p>Akses CHAT GPT PRO</p>
+        <p>Google Meet Strategi Belajar</p>
+        <p>Penerimaan Bahan Ajar Cetak</p>
+        <p>Kelas Persiapan UAS MK Bahasa Inggris</p>
+      </div>
+
+      <div class="jadwal-item">
+        <h3>April 2026</h3>
+        <p>Akses PDF BMP</p>
+        <p>Akses Canva PRO</p>
+        <p>Akses CHAT GPT PRO</p>
+        <p>Kelas Bantuan TUTON Offline</p>
+        <p>Google Meet Bantuan TUTON</p>
+        <p>Format Tugas dan Forum Diskusi TUTON</p>
+        <p>Prompt AI Tugas dan Forum Diskusi TUTON</p>
+      </div>
+
+      <div class="jadwal-item">
+        <h3>Mei 2026</h3>
+        <p>Akses Canva PRO</p>
+        <p>Akses CHAT GPT PRO</p>
+        <p>Kelas Persiapan UAS MK Wajib</p>
+        <p>Latihan Soal UAS (dari BMP & Materi TUTON)</p>
+        <p>Rangkuman Materi (dari BMP & Materi TUTON)</p>
+      </div>
+
+      <div class="jadwal-item">
+        <h3>Juni 2026</h3>
+        <p>Cetak KTM dan KTPU</p>
+        <p>Reminder Jadwal UAS</p>
+        <p>Bantuan Ganti Jadwal Ujian</p>
+        <p>Belajar Bersama Offline dan Online</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+</main>
+
+
+<!-- ================= SCRIPT (SATU BLOK, FINAL & AMAN) ================= -->
+<script>
+/* =====================================================
+   1. AMBIL DATA MAHASISWA
+   ===================================================== */
+const raw = sessionStorage.getItem("pokjarMahasiswa");
+if (!raw) {
+  alert("Data mahasiswa tidak ditemukan. Silakan ulangi dari halaman awal.");
+  window.location.href = "index.html";
+  throw new Error("Session kosong");
+}
+const m = JSON.parse(raw);
+
+/* =====================================================
+   2. ISI DATA MAHASISWA
+   ===================================================== */
+document.getElementById("nama").textContent = m.nama;
+document.getElementById("nim").textContent = m.nim;
+document.getElementById("jurusan").textContent = m.jurusan;
+document.getElementById("ipk").textContent = m.ipk;
+document.getElementById("ips").textContent = m.ips;
+document.getElementById("sks-total").textContent = m.sksTotal;
+document.getElementById("sks-lulus").textContent = m.sksLulus;
+
+/* =====================================================
+   3. FETCH NILAI SEMESTER TERAKHIR
+   ===================================================== */
+const SPREADSHEET_ID = "1SvU-xNrzFI9_VeOyjbpEx4oO5g9G45aR";
+const SHEET = "Nilai Mahasiswa";
+
+const query = "select E,F,G,H where A = '" + m.nim + "'";
+const url =
+  "https://docs.google.com/spreadsheets/d/" +
+  SPREADSHEET_ID +
+  "/gviz/tq?sheet=" +
+  encodeURIComponent(SHEET) +
+  "&tq=" +
+  encodeURIComponent(query);
+
+fetch(url)
+  .then(res => res.text())
+  .then(text => {
+    const json = JSON.parse(
+      text.substring(text.indexOf("{"), text.lastIndexOf("}") + 1)
+    );
+
+    const rows = json.table.rows || [];
+
+    const nilaiTbody = document.getElementById("tabel-nilai");
+    const wajibTbody = document.getElementById("tabel-wajib");
+    const saranTbody = document.getElementById("tabel-saran");
+    const ket = document.getElementById("keterangan");
+
+    nilaiTbody.innerHTML = "";
+    wajibTbody.innerHTML = "";
+    saranTbody.innerHTML = "";
+    ket.innerHTML = "";
+
+    let jumlahC = 0;
+    let adaE = false;
+
+    rows.forEach(r => {
+      const c = r.c || [];
+      const kode = c[0]?.v || "-";
+      const nama = c[1]?.v || "-";
+      const sks  = c[2]?.v || "-";
+      const nilai = c[3]?.v || "-";
+
+      nilaiTbody.innerHTML += `
+        <tr>
+          <td>${kode}</td>
+          <td>${nama}</td>
+          <td>${sks}</td>
+          <td>${nilai}</td>
+        </tr>`;
+
+      if (nilai === "E") {
+        adaE = true;
+        wajibTbody.innerHTML += `
+          <tr>
+            <td>${kode}</td>
+            <td>${nama}</td>
+            <td>${sks}</td>
+            <td>${nilai}</td>
+          </tr>`;
+      }
+
+      if (nilai === "C") {
+        jumlahC++;
+        saranTbody.innerHTML += `
+          <tr>
+            <td>${kode}</td>
+            <td>${nama}</td>
+            <td>${sks}</td>
+            <td>${nilai}</td>
+          </tr>`;
+      }
+    });
+
+    if (adaE) {
+      ket.innerHTML += "<li>Terdapat mata kuliah dengan nilai <strong>E</strong> yang wajib diulang.</li>";
+    }
+    if (jumlahC > 2) {
+      ket.innerHTML += "<li>Jumlah mata kuliah dengan nilai <strong>C</strong> lebih dari 2, disarankan mengulang sebagian.</li>";
+    }
+  });
+  </script>
+<script>
+/* ===============================
+   TARGET NILAI MINIMAL (FINAL & AMAN)
+   =============================== */
+
+  // ================= KONSTANTA UT =================
+  const TARGET_IPK = 3.5;
+  const TOTAL_SKS = 145;
+
+  const TUTON = 80;
+  const BOBOT_TUTON = 0.30;
+  const BOBOT_UAS = 0.70;
+
+  // ================= DATA DINAMIS =================
+  const ipkSekarang = parseFloat(m.ipk);
+  const sksLulus = parseInt(m.sksLulus);
+  const sisaSKS = TOTAL_SKS - sksLulus;
+
+  // ================= HITUNG TARGET IPS =================
+  let targetIPS =
+    ((TARGET_IPK * TOTAL_SKS) - (ipkSekarang * sksLulus)) / sisaSKS;
+
+  // pembulatan ke atas (aman)
+  targetIPS = Math.ceil(targetIPS * 100) / 100;
+
+  // ================= HITUNG TARGET UAS =================
+  let nilaiAkhir = targetIPS * 25;
+
+  let targetUAS =
+    (nilaiAkhir - (TUTON * BOBOT_TUTON)) / BOBOT_UAS;
+
+  targetUAS = Math.ceil(targetUAS);
+
+  // ================= KONVERSI NILAI =================
+  function konversiNilai(uas) {
+    if (uas >= 80) return "A";
+    if (uas >= 75) return "B";
+    if (uas >= 70) return "B-";
+    if (uas >= 65) return "C";
+    if (uas >= 60) return "C-";
+    if (uas >= 55) return "D";
+    if (uas >= 50) return "D-";
+    return "E";
+  }
+
+  // ================= ISI KE HTML =================
+  document.getElementById("target-ips").textContent = targetIPS.toFixed(2);
+  document.getElementById("target-uas").textContent = targetUAS;
+  document.getElementById("target-huruf").textContent = konversiNilai(targetUAS);
+
+</script>
+
+
+
+</body>
+</html>
